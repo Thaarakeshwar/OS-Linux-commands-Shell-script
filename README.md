@@ -55,7 +55,7 @@ cmp file1 file2
  
 comm file1 file2
  ## OUTPUT
-
+![Alt text](img/cmp.png)
  
 diff file1 file2
 ## OUTPUT
