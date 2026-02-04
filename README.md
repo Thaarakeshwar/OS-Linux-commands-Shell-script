@@ -52,14 +52,13 @@ cat < file2
 # Comparing Files
 cmp file1 file2
 ## OUTPUT
- 
+ ![Alt text](img/cmp.png)
 comm file1 file2
  ## OUTPUT
-![Alt text](img/cmp.png)
- 
+ ![Alt text](img/comm.png)
 diff file1 file2
 ## OUTPUT
-
+![Alt text](img/diff.png)
 
 #Filters
 
@@ -82,7 +81,7 @@ cat > file22
 
 cut -c1-3 file11
 ## OUTPUT
-
+![Alt text](img/file11.png)
 
 
 
