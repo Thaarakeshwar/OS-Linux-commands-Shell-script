@@ -47,7 +47,7 @@ cat < file1
 
 cat < file2
 ## OUTPUT
-
+[Title](file2)
 
 # Comparing Files
 cmp file1 file2
