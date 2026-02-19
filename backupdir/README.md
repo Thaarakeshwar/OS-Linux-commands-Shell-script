@@ -42,26 +42,24 @@ s.n. dasgupta
 ### Display the content of the files
 cat < file1
 ## OUTPUT
-![Alt text](file1.png)
+
 
 
 cat < file2
 ## OUTPUT
-![Alt text](file2.png)
+
 
 # Comparing Files
-
 cmp file1 file2
 ## OUTPUT
- ![Alt text](cmp.png)
-
+ 
 comm file1 file2
  ## OUTPUT
-![Alt text](comm.png)
+
  
 diff file1 file2
 ## OUTPUT
-![Alt text](diff.png)
+
 
 #Filters
 
@@ -84,65 +82,67 @@ cat > file22
 
 cut -c1-3 file11
 ## OUTPUT
-![Alt text](cut.png)
+
 
 
 
 cut -d "|" -f 1 file22
 ## OUTPUT
-![Alt text](cut1.png)
+
 
 
 cut -d "|" -f 2 file22
 ## OUTPUT
-![Alt text](cut2.png)
 
-cat > newfile 
+
+cat < newfile 
 ```
 Hello world
 hello world
 ^d
-```
-```
+````
 cat > newfile 
 Hello world
 hello world
- ```
-
+ 
 grep Hello newfile 
 ## OUTPUT
-![Alt text](grep.png)
+
 
 
 grep hello newfile 
 ## OUTPUT
-![Alt text](grep1.png)
+
 
 
 
 grep -v hello newfile 
 ## OUTPUT
-![Alt text](grep2.png)
+
 
 
 cat newfile | grep -i "hello"
 ## OUTPUT
-![Alt text](cat.png)
+
+
+
 
 cat newfile | grep -i -c "hello"
 ## OUTPUT
-![Alt text](cat1.png)
+
+
+
 
 grep -R ubuntu /etc
 ## OUTPUT
-![Alt text](ubuntu.png)
+
 
 
 grep -w -n world newfile   
 ## OUTPUT
-![Alt text](world.png)
 
-cat > newfile 
+
+cat < newfile 
 ```
 Hello world
 hello world
@@ -163,51 +163,60 @@ Linux is best in this World
  ```
 egrep -w 'Hello|hello' newfile 
 ## OUTPUT
-![Alt text](egrep.png)
+
+
 
 egrep -w '(H|h)ello' newfile 
 ## OUTPUT
-![Alt text](egrep1.png)
+
+
 
 egrep -w '(H|h)ell[a-z]' newfile 
 ## OUTPUT
-![Alt text](egrep2.png)
+
+
+
 
 egrep '(^hello)' newfile 
 ## OUTPUT
-![Alt text](egrep3.png)
+
+
 
 egrep '(world$)' newfile 
 ## OUTPUT
-![Alt text](world1.png)
+
+
 
 egrep '(World$)' newfile 
 ## OUTPUT
-![Alt text](world2.png)
+
 
 egrep '((W|w)orld$)' newfile 
 ## OUTPUT
-![Alt text](world3.png)
+
+
 
 egrep '[1-9]' newfile 
 ## OUTPUT
-![Alt text](newfile1.png)
+
+
 
 egrep 'Linux.*world' newfile 
 ## OUTPUT
-![Alt text](newfile2.png)
+
 
 egrep 'Linux.*World' newfile 
 ## OUTPUT
-![Alt text](newfile3.png)
+
 
 egrep l{2} newfile
 ## OUTPUT
-![Alt text](newfile4.png)
+
+
 
 egrep 's{1,2}' newfile
 ## OUTPUT 
-![Alt text](newfile5.png)
+
 
 cat > file23
 ```
@@ -221,72 +230,86 @@ cat > file23
 1001 | Ram | 10000 | HR
 ^d
 ```
+
+
 sed -n -e '3p' file23
 ## OUTPUT
-![Alt text](sed.png)
+
+
 
 sed -n -e '$p' file23
 ## OUTPUT
-![Alt text](sed1.png)
+
+
 
 sed  -e 's/Ram/Sita/' file23
 ## OUTPUT
-![Alt text](sed2.png)
+
+
 
 sed  -e '2s/Ram/Sita/' file23
 ## OUTPUT
-![Alt text](sed3.png)
+
+
 
 sed  '/tom/s/5000/6000/' file23
 ## OUTPUT
-![Alt text](sed4.png)
+
+
 
 sed -n -e '1,5p' file23
 ## OUTPUT
-![Alt text](sed5.png)
+
+
 
 sed -n -e '2,/Joe/p' file23
 ## OUTPUT
-![Alt text](sed6.png)
+
+
+
 
 sed -n -e '/tom/,/Joe/p' file23
 ## OUTPUT
-![Alt text](sed7.png)
+
+
 
 seq 10 
 ## OUTPUT
-![Alt text](seq.png)
+
+
 
 seq 10 | sed -n '4,6p'
 ## OUTPUT
-![Alt text](seq1.png)
+
+
 
 seq 10 | sed -n '2,~4p'
 ## OUTPUT
-![Alt text](seq2.png)
+
+
 
 seq 3 | sed '2a hello'
 ## OUTPUT
-![Alt text](seq3.png)
+
+
 
 seq 2 | sed '2i hello'
 ## OUTPUT
-![Alt text](seq4.png)
+
 
 seq 10 | sed '2,9c hello'
 ## OUTPUT
-![Alt text](seq5.png)
+
 
 sed -n '2,4{s/^/$/;p}' file23
 ## OUTPUT
-![Alt text](sed8.png)
+
+
 
 sed -n '2,4{s/$/*/;p}' file23
-## OUTPUT
-![Alt text](sed9.png)
+
 
 #Sorting File content
-
 cat > file21
 ```
 1001 | Ram | 10000 | HR
@@ -297,7 +320,7 @@ cat > file21
 ``` 
 sort file21
 ## OUTPUT
-![Alt text](sort.png)
+
 
 cat > file22
 ```
@@ -310,15 +333,15 @@ cat > file22
 ``` 
 uniq file22
 ## OUTPUT
-![Alt text](uniq.png)
+
+
 
 #Using tr command
 
 cat file23 | tr [:lower:] [:upper:]
  ## OUTPUT
-![Alt text](catfile23.png)
 
-cat > urllist.txt
+cat < urllist.txt
 ```
 www. yahoo. com
 www. google. com
@@ -333,17 +356,18 @@ www. mrcet.... com
  ```
 cat urllist.txt | tr -d ' '
  ## OUTPUT
-![Alt text](<car urllist.png>)
 
+
+ 
 cat urllist.txt | tr -d ' ' | tr -s '.'
 ## OUTPUT
-![Alt text](caturllist.png)
+
+
 
 #Backup commands
-
 tar -cvf backup.tar *
 ## OUTPUT
-![Alt text](tar.png)
+
 
 mkdir backupdir
  
@@ -353,14 +377,30 @@ cd backupdir
  
 tar -tvf backup.tar
 ## OUTPUT
-![Alt text](tar_backup.png)
+
 
 tar -xvf backup.tar
 ## OUTPUT
-![Alt text](tar_backup1.png)
 
+gzip backup.tar
+
+ls .gz
+## OUTPUT
+ 
+gunzip backup.tar.gz
+## OUTPUT
+
+ 
 # Shell Script
+```
+echo '#!/bin/sh' > my-script.sh
+echo 'echo Hello World‘; exit 0 >> my-script.sh
+```
+chmod 755 my-script.sh
+./my-script.sh
+## OUTPUT
 
+ 
 cat << stop > herecheck.txt
 ```
 hello in this world
@@ -368,11 +408,12 @@ i cant stop
 for this non stop movement
 stop
 ```
+
 cat herecheck.txt
 ## OUTPUT
-![Alt text](herecheck.png)
 
-cat > scriptest.sh 
+
+cat < scriptest.sh 
 ```bash
 \#!/bin/sh
 echo “File name is $0 ”
@@ -402,21 +443,19 @@ echo 'The $\# is ' $\#
 echo 'The $$ is ' $$
 ps
 ```
+ 
 chmod 777 scriptest.sh
  
 ./scriptest.sh 1 2 3
 
 ## OUTPUT
-![Alt text](scriptest.png)
+
  
 ls file1
 ## OUTPUT
-![Alt text](ls_file1.png)
 
 echo $?
 ## OUTPUT 
-![Alt text](echo_$.png)
-
 ./one
 bash: ./one: Permission denied
  
