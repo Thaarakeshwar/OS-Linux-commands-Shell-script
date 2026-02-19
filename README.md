@@ -964,6 +964,8 @@ else
 	echo "Number is NOT palindrome"
 fi
 ```
+$ chmod 777 palindrome.sh
+$ ./palindrome.sh
 ## OUTPUT 
 ![Alt text](palindrome.png)
 
