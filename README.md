@@ -719,10 +719,9 @@ $ chmod 755 forin1.sh
 ## OUTPUT
 ![Alt text](chmod.png)
 
-cat forinfile.sh 
+cat > forinfile.sh 
 ```bash
 #!/bin/bash
-# reading values from a file
 file="cities"
 for state in `cat $file`
 do
@@ -730,7 +729,7 @@ echo "Visit beautiful $file“
 done
 ```
 $ chmod 777 forinfile.sh
-$ cat cities
+$ cat > cities
 Hyderabad
 Alampur
 Basara
@@ -740,12 +739,11 @@ Bhadrachalam
 Khammam
 
 ## OUTPUT
+![Alt text](cities.png)
 
-
-cat forctype.sh 
+cat > forctype.sh 
 ```bash
 #!/bin/bash
-# testing the C-style for loop
 for (( i=1; i <= 5; i++ ))
 do
 echo "The value of i is $i"
@@ -754,24 +752,11 @@ done
 $ chmod 755 forctype.sh
 $ ./forctype.sh 
 ## OUTPUT
+![Alt text](forctype.png)
 
-cat forctype1.sh 
+cat > fornested1.sh 
 ```bash
 #!/bin/bash
-# multiple variables
-for (( a=1, b=5; a <= 5; a++, b-- ))
-do
-echo "$a - $b"
-done
-```
-$ chmod 755 forctype.sh
-$ ./forctype1.sh 
-## OUTPUT
-
-cat fornested1.sh 
-```bash
-#!/bin/bash
-# nesting for loops
 for (( a = 1; a <= 3; a++ ))
 do
 echo "Starting loop $a:"
@@ -785,12 +770,11 @@ $ chmod 755 fornested1.sh
  
 $ ./fornested1.sh 
  ## OUTPUT
-
+![Alt text](loop.png)
  
-cat forbreak.sh 
+cat > forbreak.sh 
 ```bash
 #!/bin/bash
-# breaking out of a for loop
 for var1 in 1 2 3 4 5
 do
 if [ $var1 -eq 3 ]
@@ -801,16 +785,16 @@ echo "Iteration number: $var1"
 done
 echo "The for loop is completed“
 ```
-## OUTPUT
-
 $ chmod 755 forbreak.sh
  
 $ ./forbreak.sh 
  
-cat forbreak.sh 
+ ## OUTPUT
+ ![Alt text](iteration_number.png)
+
+cat > forcontinue.sh 
 ```bash
 #!/bin/bash
-# breaking out of a for loop
 for var1 in 1 2 3 4 5
 do
 if [ $var1 -eq 3 ]
@@ -822,13 +806,13 @@ done
 echo "The for loop is completed“
 ```
 
- 
 $ chmod 755 forcontinue.sh
  
 $ ./forcontinue.sh 
 ## OUTPUT
- 
-cat exread.sh 
+ ![Alt text](for_continue.png)
+
+cat > exread.sh 
 ```bash
 #!/bin/bash
 # testing the read command
