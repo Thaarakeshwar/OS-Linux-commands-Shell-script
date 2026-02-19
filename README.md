@@ -417,22 +417,9 @@ echo $?
 ## OUTPUT 
 ![Alt text](echo_$.png)
 
-./one
-bash: ./one: Permission denied
- 
-echo $?
-## OUTPUT 
- 
-abcd
- 
-echo $?
- ## OUTPUT
-
-
- 
 # mis-using string comparisons
 
-cat < strcomp.sh 
+cat > strcomp.sh 
 ```bash
 \#!/bin/bash
 val1=baseball
@@ -445,7 +432,6 @@ echo "$val1 is less than $val2"
 fi
 ^d
 ```
-
 cat strcomp.sh 
 ```bash
 \#!/bin/bash
@@ -457,19 +443,18 @@ echo "$val1 is greater than $val2"
 else
 echo "$val1 is less than $val2"
 fi
-```
+
 ##OUTPUT
-
-
+![Alt text](cat_strcomp.png)
 
 chmod 755 strcomp.sh
  
 ./strcomp.sh 
 ## OUTPUT
-
+![Alt text](strcomp.png)
 
 # check file ownership
-cat < psswdperm.sh 
+cat > psswdperm.sh 
 ```bash
 \#!/bin/bash
 if [ -O /etc/passwd ]
@@ -493,9 +478,10 @@ fi
  ```
 ./psswdperm.sh
 ## OUTPUT
+![Alt text](psswdperm.png)
 
 # check if with file location
-cat>ifnested.sh 
+cat > ifnested.sh 
 ```bash
 \#!/bin/bash
 if [ -e $HOME ]
@@ -517,8 +503,8 @@ fi
 ^d
 ```
 cat ifnested.sh 
-```
-\#!/bin/bash
+```bash
+#!/bin/bash
 if [ -e $HOME ]
 then
 echo “$HOME The object exists, is it a file?”
@@ -539,8 +525,7 @@ fi
 
 ./ifnested.sh 
 ## OUTPUT
-
-
+![Alt text](ifnested_sh.png)
 
 # using numeric test comparisons
 cat > iftest.sh 
@@ -560,8 +545,6 @@ echo “The values are different”
 fi
 ^d
 ```
-
-
 cat iftest.sh 
 ```bash
 \#!/bin/bash
@@ -577,12 +560,12 @@ echo “The values are equal”
 else
 echo “The values are different”
 fi
-```
 
 $ chmod 755 iftest.sh
  
 $ ./iftest.sh 
 ##OUTPUT
+![Alt text](iftest_sh.png)
 
 # check if a file
 cat > ifnested.sh 
@@ -626,15 +609,15 @@ fi
 else
 echo “Sorry, the object does not exist”
 fi
-```
 
 $ chmod 755 ifnested.sh
  
 $ ./ifnested.sh 
 ##OUTPUT
+![Alt text](home_ifnested.png)
 
 # looking for a possible value using elif
-cat elifcheck.sh 
+cat > elifcheck.sh 
 ```bash
 \#!/bin/bash
 if [ $USER = Ram ]
@@ -660,10 +643,10 @@ $ chmod 755 elifcheck.sh
  
 $ ./elifcheck.sh 
 ## OUTPUT
-
+![Alt text](elif_check.png)
 
 # testing compound comparisons
-cat> ifcompound.sh 
+cat > ifcompound.sh 
 ```bash
 \#!/bin/bash
 if [ -d $HOME ] && [ -w $HOME ]
@@ -676,57 +659,11 @@ fi
 $ chmod 755 ifcompound.sh
 $ ./ifcompound.sh 
 ## OUTPUT
+![Alt text](if_compound.png)
 
 # using the case command
-cat >casecheck.sh 
-```bash
-case $USER in
-Ram | Robert)
-echo "Welcome, $USER"
-echo "Please enjoy your visit";;
-Rahim)
-echo "Special testing account";;
-gganesh)
-echo "$USER, Do not forget to log off when you're done";;
-*)
-echo "Sorry, you are not allowed here";;
-esac
-```
-$ chmod 755 casecheck.sh 
- 
-$ ./casecheck.sh 
- 
-cat > whiletest
-```bash
-#!/bin/bash
-#while command test
-var1=10
-while [ $var1 -gt 0 ]
-do
-echo $var1
-var1=$[ $var1 - 1 ]
-done
-```
-$ chmod 755 whiletest.sh
- 
-$ ./whiletest.sh
- 
- 
-cat untiltest.sh 
-```bash
-\#using the until command
-var1=100
-until [ $var1 -eq 0 ]
-do
-echo $var1
-var1=$[ $var1 - 25 ]
-done
-``` 
-$ chmod 755 untiltest.sh
- 
- 
- 
-cat forin1.sh 
+
+cat > forin1.sh 
 ```bash
 \#!/bin/bash
 \#basic for command
@@ -734,59 +671,54 @@ for test in Alabama Alaska Arizona Arkansas California Colorado
 do
 echo The next state is $test
 done
- ```
- 
+
 $ chmod 755 forin1.sh
  
- 
-cat forin2.sh 
+cat > forin2.sh 
 ```bash
-\#!/bin/bash
-\# another example of how not to use the for command
+#!/bin/bash
 for test in I don't know if this'll work
 do
 echo “word:$test”
 done
- ```
- 
+
 $ chmod 755 forin2.sh
  
-cat forin2.sh 
+cat > forin2.sh 
 ```bash
-\#!/bin/bash
-\# another example of how not to use the for command
+#!/bin/bash
 for test in I don't know if this'll work
 do
 echo “word:$test”
 done
-```
+
 $ chmod 755 forin2.sh
  
 $ ./forin2.sh 
  
-cat forin3.sh 
+cat > forin3.sh 
 ```bash
 \#!/bin/bash
-\# another example of how not to use the for command
 for test in I don\'t know if "this'll" work
 do
 echo "word:$test"
 done
-```
+
 $ ./forin3.sh 
  
-cat forin1.sh 
+cat > forin1.sh 
 ```bash
 #!/bin/bash
-# basic for command
 for test in Alabama Alaska Arizona Arkansas California Colorado
 do
 echo The next state is $test
 done
-```
+
 $ chmod 755 forin1.sh
 
 ## OUTPUT
+![Alt text](chmod.png)
+
 cat forinfile.sh 
 ```bash
 #!/bin/bash
