@@ -866,16 +866,17 @@ cat > argshift.sh
   echo $1 
   shift 
 done
-```
+
 $ chmod 777 argshift.sh
 
-## OUTPUT
 $ ./argshift.sh 1 2 3
- 
- cat argshift1.sh
+
+## OUTPUT
+ ![Alt text](argshift_123.png)
+
+cat > argshift1.sh
 ```bash
- #/bin/bash 
- # store arguments in a special array 
+#!/bin/bash 
 args=("$@") 
 # get number of elements 
 ELEMENTS=${#args[@]} 
@@ -884,12 +885,15 @@ ELEMENTS=${#args[@]}
 for (( i=0;i<$ELEMENTS;i++)); do 
     echo ${args[${i}]} 
 done
-```
+
 $ chmod 777 argshift.sh
-## OUTPUT
+
 $ ./argshift.sh 1 2 3
  
-cat argshift.sh
+ ## OUTPUT
+ ![Alt text](argshift123.png)
+
+cat > argshift.sh
 ```bash
 #!/bin/bash 
 set -x 
@@ -899,10 +903,11 @@ while (( "$#" )); do
 done
 set +x
 ```
-## OUTPUT
- ./argshift.sh 1 2 3
+./argshift.sh 1 2 3
  
- 
+ ## OUTPUT
+![Alt text](shift.png)
+
 cat > nc.awk
 ```bash
 BEGIN{}
@@ -917,7 +922,7 @@ print "Number of Lines are",NR
 print "No of Words count:",wordcount
 }
  ```
-cat>data.dat
+cat > data.dat
 ```bash
 bcdfghj
 abcdfghj
@@ -932,7 +937,8 @@ ubcdfghj
 ```
 awk -f nc.awk data.dat
 ## OUTPUT 
- 
+ ![Alt text](data_dat.png)
+
 cat > palindrome.sh
 ```bash
 #num=545
@@ -959,7 +965,7 @@ else
 fi
 ```
 ## OUTPUT 
-
+![Alt text](palindrome.png)
 
 # RESULT:
 The Commands are executed successfully.
