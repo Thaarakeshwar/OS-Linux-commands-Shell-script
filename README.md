@@ -820,32 +820,28 @@ echo -n "Enter your name: "
 read name
 echo "Hello $name, welcome to my program. "
  ```
- 
 $ chmod 755 exread.sh 
  
 $ ./exread.sh 
 ## OUTPUT
+![Alt text](exread.png)
 
-
- cat exread1.sh
+ cat > exread1.sh
 ```bash
 #!/bin/bash
-# testing the read command
 read -p "Enter your name: " name
 echo "Hello $name, welcome to my program. “
-``` 
+
 $ chmod 755 exread1.sh 
 
+./exread1.sh
+
 ## OUTPUT
+![Alt text](exread1.png)
 
-
-
-$ ./exread1.sh 
- 
-cat funcex.sh
+cat > funcex.sh
 ```bash
 #!/bin/bash
-# trying to access script parameters inside a function
 function func {
 echo $[ $1 * $2 ]
 }
@@ -857,14 +853,13 @@ else
 echo "Usage: badtest1 a b"
 fi
 ```
-## OUTPUT
- ./funcex.sh 
+./funcex.sh 
 
- 
  ./funcex.sh 1 2
+## OUTPUT
+ ![Alt text](funcex.png)
 
- 
-cat argshift.sh
+cat > argshift.sh
 ```bash
 #!/bin/bash 
  while (( "$#" )); do 
